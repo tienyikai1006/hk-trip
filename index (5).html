@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小姆&波魚的香港之旅🇭🇰</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;900&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --tom-blue: #2d6fa8;
+  --tom-blue-dark: #1a4a75;
+  --tom-blue-light: #e8f2fb;
+  --jerry-orange: #e8840a;
+  --jerry-warm: #fef3e2;
+  --jerry-amber: #f5c842;
+  --cheese-yellow: #f7d842;
+  --red-accent: #d94f3d;
+  --green-ok: #3aad6e;
+  --bg: #fdf8f2;
+  --surface: #ffffff;
+  --surface2: #faf6f0;
+  --border: #ecddd0;
+  --text: #2a1f15;
+  --text2: #7a5f4a;
+  --text3: #b09080;
+  --shadow: 0 2px 8px rgba(42,31,21,0.08), 0 1px 3px rgba(42,31,21,0.05);
+  --shadow-md: 0 4px 20px rgba(42,31,21,0.12), 0 2px 8px rgba(42,31,21,0.08);
+  --radius: 16px;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:'Noto Sans TC',sans-serif; min-height:100vh; }
+
+/* ── HEADER ── */
+.header {
+  background: linear-gradient(160deg, #1a4a75 0%, #2d6fa8 45%, #3d8fc8 100%);
+  padding: 0 0 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.header-pattern {
+  position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(
+    -45deg, transparent, transparent 18px,
+    rgba(255,255,255,0.03) 18px, rgba(255,255,255,0.03) 36px
+  );
+  pointer-events: none;
+}
+/* cheese holes decoration */
+.cheese-holes {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 8px;
+  background: var(--bg);
+  clip-path: polygon(0% 100%, 2% 0%, 4% 100%, 6% 0%, 8% 100%, 10% 0%, 12% 100%, 14% 0%, 16% 100%, 18% 0%, 20% 100%, 22% 0%, 24% 100%, 26% 0%, 28% 100%, 30% 0%, 32% 100%, 34% 0%, 36% 100%, 38% 0%, 40% 100%, 42% 0%, 44% 100%, 46% 0%, 48% 100%, 50% 0%, 52% 100%, 54% 0%, 56% 100%, 58% 0%, 60% 100%, 62% 0%, 64% 100%, 66% 0%, 68% 100%, 70% 0%, 72% 100%, 74% 0%, 76% 100%, 78% 0%, 80% 100%, 82% 0%, 84% 100%, 86% 0%, 88% 100%, 90% 0%, 92% 100%, 94% 0%, 96% 100%, 98% 0%, 100% 100%);
+}
+.header-characters {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0;
+  padding-top: 16px;
+  position: relative;
+  z-index: 2;
+}
+/* Tom SVG */
+.tom-svg, .jerry-svg { flex-shrink: 0; }
+
+.header-text {
+  padding: 10px 20px 20px;
+  position: relative; z-index: 2;
+}
+.header h1 {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(18px, 5vw, 28px);
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.3px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.header-date {
+  margin-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 20px;
+  padding: 5px 16px;
+  color: rgba(255,255,255,0.95);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ── CONTAINER ── */
+.container { max-width: 680px; margin: 0 auto; padding: 14px 14px 80px; }
+
+/* ── CARD ── */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.card-header {
+  padding: 13px 16px 11px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  font-weight: 900;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.title-icon { font-size: 16px; }
+.btn-sm {
+  background: var(--tom-blue-light);
+  color: var(--tom-blue);
+  border: 1.5px solid #b8d4ec;
+  border-radius: 10px;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Noto Sans TC', sans-serif;
+  transition: all 0.15s;
+}
+.btn-sm:hover { background: var(--tom-blue); color: white; border-color: var(--tom-blue); }
+
+/* ── TODO ── */
+.todo-list { padding: 12px 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+.todo-chip {
+  display: flex; align-items: center; gap: 7px;
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 6px 12px 6px 8px;
+  font-size: 13px; font-weight: 600;
+  color: var(--text2);
+  cursor: pointer; transition: all 0.18s;
+  user-select: none; background: var(--surface2);
+}
+.todo-chip:hover { border-color: var(--tom-blue); color: var(--tom-blue); background: var(--tom-blue-light); }
+.todo-chip.done { border-color: #b6e8cc; background: #f0fbf5; color: #2a8a55; text-decoration: line-through; opacity: 0.65; }
+.todo-cb {
+  width: 18px; height: 18px;
+  border: 2px solid currentColor; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 900; flex-shrink: 0;
+}
+.todo-chip.done .todo-cb::after { content: '✓'; }
+
+/* ── EXPENSE ── */
+.expense-top {
+  background: linear-gradient(135deg, #1a4a75, #2d6fa8);
+  padding: 16px 18px;
+  display: flex; align-items: center;
+  justify-content: space-between; flex-wrap: wrap; gap: 10px;
+}
+.total-label { font-size: 11px; color: rgba(255,255,255,0.65); font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
+.total-amount { font-family: 'Nunito', sans-serif; font-size: 30px; font-weight: 900; color: white; letter-spacing: -1px; }
+.total-amount sup { font-size: 14px; font-weight: 700; opacity: 0.8; vertical-align: super; }
+.btn-add-exp {
+  background: rgba(255,255,255,0.18);
+  border: 1.5px solid rgba(255,255,255,0.3);
+  color: white; border-radius: 20px;
+  padding: 7px 16px; font-size: 13px; font-weight: 700;
+  cursor: pointer; font-family: 'Noto Sans TC', sans-serif;
+  transition: all 0.15s;
+}
+.btn-add-exp:hover { background: rgba(255,255,255,0.3); }
+
+.expense-breakdown {
+  display: flex; gap: 0;
+  border-bottom: 1px solid var(--border);
+}
+.exp-person {
+  flex: 1; padding: 12px 14px;
+  border-right: 1px solid var(--border);
+  text-align: center;
+}
+.exp-person:last-child { border-right: none; }
+.exp-person-icon { font-size: 22px; margin-bottom: 2px; }
+.exp-person-name { font-size: 11px; font-weight: 700; color: var(--text2); }
+.exp-person-amt { font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 900; margin-top: 2px; }
+.exp-shared .exp-person-amt { color: var(--tom-blue); }
+.exp-mumu .exp-person-amt { color: #c9880a; }
+.exp-boyu .exp-person-amt { color: var(--red-accent); }
+
+.expense-log { padding: 0 16px; }
+.exp-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 9px 0; border-bottom: 1px solid var(--border); gap: 10px;
+}
+.exp-row:last-child { border-bottom: none; }
+.exp-row-left { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.exp-badge {
+  font-size: 10px; font-weight: 800;
+  padding: 2px 8px; border-radius: 8px;
+  white-space: nowrap; flex-shrink: 0;
+}
+.eb-shared { background: #dbeafe; color: #1e4a8a; }
+.eb-mumu { background: #fef3c7; color: #92600a; }
+.eb-boyu { background: #fee2e2; color: #9b2c2c; }
+.exp-desc { font-size: 13px; color: var(--text); font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.exp-right { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.exp-amt { font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 800; color: var(--text); }
+.btn-del-exp {
+  width: 24px; height: 24px; border: none; background: none;
+  color: var(--text3); cursor: pointer; border-radius: 50%;
+  font-size: 15px; display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+}
+.btn-del-exp:hover { background: #fee2e2; color: #e53e3e; }
+
+/* ── TABS ── */
+.tabs {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  margin-bottom: 12px;
+  padding: 6px;
+  display: flex; gap: 4px;
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.tabs::-webkit-scrollbar { display: none; }
+.tab {
+  flex: 1; min-width: 68px;
+  padding: 8px 10px; border-radius: 10px;
+  text-align: center; cursor: pointer;
+  transition: all 0.18s; white-space: nowrap;
+}
+.tab:hover { background: var(--surface2); }
+.tab.active { background: var(--tom-blue); color: white; }
+.tab .dn { font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 900; display: block; }
+.tab .dd { font-size: 10px; opacity: 0.7; font-weight: 600; }
+.tab.active .dd { opacity: 0.85; }
+
+/* ── DAY ── */
+.day-panel { display: none; }
+.day-panel.active { display: block; }
+
+.flight-card {
+  background: linear-gradient(135deg, #0f2a45, #1a4a75);
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 14px 18px;
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow);
+}
+.flight-icon { font-size: 28px; animation: ffly 3s ease-in-out infinite; }
+@keyframes ffly { 0%,100%{transform:translateX(0) rotate(-8deg)} 50%{transform:translateX(5px) rotate(-4deg)} }
+.flight-num { font-size: 11px; color: rgba(255,255,255,0.5); font-weight: 700; letter-spacing: 1px; }
+.flight-route { font-family: 'Nunito', sans-serif; font-size: 17px; font-weight: 900; color: var(--jerry-amber); }
+.flight-time { font-size: 12px; color: rgba(255,255,255,0.78); }
+
+.day-card { background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow); overflow: hidden; margin-bottom: 12px; }
+.day-banner {
+  padding: 13px 16px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(90deg, #fdf8f2, var(--surface));
+}
+.day-banner-l { display: flex; align-items: center; gap: 10px; }
+.day-label { font-family: 'Nunito', sans-serif; font-size: 20px; font-weight: 900; color: var(--tom-blue); }
+.day-info { font-size: 12px; color: var(--text2); font-weight: 600; }
+.btn-add-item {
+  background: var(--tom-blue-light); color: var(--tom-blue);
+  border: 1.5px solid #b8d4ec; border-radius: 20px;
+  padding: 6px 14px; font-size: 12px; font-weight: 700;
+  cursor: pointer; font-family: 'Noto Sans TC', sans-serif;
+  transition: all 0.15s; display: flex; align-items: center; gap: 4px;
+}
+.btn-add-item:hover { background: var(--tom-blue); color: white; border-color: var(--tom-blue); }
+
+.time-row {
+  padding: 10px 16px 4px;
+  display: flex; align-items: center; gap: 8px;
+}
+.time-pill {
+  font-family: 'Nunito', sans-serif;
+  font-size: 11px; font-weight: 900;
+  padding: 3px 11px; border-radius: 10px; letter-spacing: 0.3px;
+}
+.tp-morn { background: #fef9e8; color: #a06b00; border: 1px solid #f5e2a0; }
+.tp-noon { background: #edfbf4; color: #1a7a50; border: 1px solid #a8e8c8; }
+.tp-night { background: #eef2fc; color: #2d5fa8; border: 1px solid #bdd0f0; }
+.time-div { flex:1; height:1px; background: var(--border); }
+
+/* ── ITEM CARD / DRAG ── */
+.item-list { min-height: 20px; padding: 2px 12px 12px; }
+.item-list.drag-over {
+  background: #eef6fd;
+  border: 2px dashed #7aaed6;
+  border-radius: 14px;
+}
+.item-row {
+  position: relative;
+  display: flex; align-items: flex-start;
+  gap: 12px; padding: 14px;
+  margin-top: 10px;
+  background: var(--surface2);
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(42,31,21,0.05);
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s, background 0.15s;
+  cursor: grab;
+}
+.item-row:first-child { margin-top: 0; }
+.item-row:hover {
+  background: #fffdfb;
+  border-color: #d8c4b2;
+  box-shadow: 0 6px 18px rgba(42,31,21,0.08);
+  transform: translateY(-1px);
+}
+.item-row:active { cursor: grabbing; }
+.item-row.dragging { opacity: 0.45; transform: scale(0.985); box-shadow: none; }
+.item-list { min-height: 10px; }
+.drop-indicator {
+  height: 0;
+  border-top: 3px solid var(--tom-blue);
+  border-radius: 999px;
+  margin: 8px 12px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.85);
+}
+.item-move-badge {
+  position: absolute;
+  top: 10px; left: 10px;
+  font-size: 11px; font-weight: 800;
+  color: var(--text3);
+  background: white;
+  border: 1px dashed #d6c5b8;
+  border-radius: 999px;
+  padding: 2px 8px;
+}
+
+/* SVG icon wrapper */
+.type-icon-wrap {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 1px;
+}
+.ti-bg-food { background: #fff3e8; }
+.ti-bg-sight { background: #eef8f0; }
+.ti-bg-transport { background: #e8f2fb; }
+.ti-bg-hotel { background: #fdf0f8; }
+.ti-bg-shop { background: #fdf5e0; }
+
+.item-body { flex: 1; min-width: 0; }
+.item-name { font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.35; }
+.item-name a { color: var(--tom-blue); text-decoration: none; display: inline-flex; align-items: center; gap: 3px; }
+.item-name a:hover { text-decoration: underline; }
+.item-name a::after { content: '↗'; font-size: 10px; opacity: 0.55; }
+.item-tags { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 3px; align-items: center; }
+.tag-loc { background: #e8f4fb; color: #1a6090; font-size: 11px; font-weight: 600; padding: 1px 7px; border-radius: 6px; }
+.tag-booked { background: #e8f8ef; color: #1a7a50; font-size: 11px; font-weight: 600; padding: 1px 7px; border-radius: 6px; }
+.item-note { font-size: 11px; color: var(--text3); margin-top: 3px; line-height: 1.5; }
+.item-actions { display: flex; gap: 3px; flex-shrink: 0; margin-top: 18px; }
+.btn-icon {
+  width: 28px; height: 28px; border: none;
+  border-radius: 8px; cursor: pointer; font-size: 13px;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+}
+.btn-edit-i { background: #eef2fb; color: #3d5fc8; }
+.btn-edit-i:hover { background: #3d5fc8; color: white; }
+.btn-del-i { background: #feeeed; color: #d94040; }
+.btn-del-i:hover { background: #d94040; color: white; }
+
+/* ── MODAL ── */
+.overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(15,20,30,0.55);
+  backdrop-filter: blur(6px);
+  z-index: 999;
+  align-items: center; justify-content: center;
+  padding: 16px;
+}
+.overlay.open { display: flex; }
+.modal {
+  background: white; border-radius: 20px;
+  width: 100%; max-width: 420px;
+  box-shadow: var(--shadow-md); overflow: hidden;
+  animation: slideUp 0.22s cubic-bezier(0.34,1.4,0.64,1);
+  border: 1px solid var(--border);
+}
+@keyframes slideUp { from{transform:translateY(22px);opacity:0} to{transform:translateY(0);opacity:1} }
+.modal-head {
+  padding: 15px 18px;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  background: linear-gradient(90deg, var(--tom-blue-light), white);
+}
+.modal-head h3 { font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 900; color: var(--text); }
+.modal-x {
+  width: 28px; height: 28px; border: none;
+  background: var(--surface2); border-radius: 50%;
+  cursor: pointer; font-size: 16px; color: var(--text2);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+}
+.modal-x:hover { background: #fee2e2; color: #e53e3e; }
+.modal-body { padding: 16px 18px; display: flex; flex-direction: column; gap: 12px; }
+.field label { display: block; font-size: 11px; font-weight: 800; color: var(--text2); margin-bottom: 5px; letter-spacing: 0.4px; text-transform: uppercase; }
+.field input, .field select, .field textarea {
+  width: 100%; border: 1.5px solid var(--border);
+  border-radius: 10px; padding: 9px 12px;
+  font-family: 'Noto Sans TC', sans-serif; font-size: 14px; color: var(--text);
+  outline: none; transition: border 0.18s; background: var(--surface2);
+}
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--tom-blue); background: white; }
+.field textarea { resize: vertical; min-height: 56px; }
+.modal-foot { padding: 0 18px 18px; display: flex; gap: 8px; }
+.btn-cancel {
+  flex: 1; padding: 10px; border: 1.5px solid var(--border);
+  border-radius: 10px; background: white; color: var(--text2);
+  font-family: 'Noto Sans TC', sans-serif; font-size: 14px; font-weight: 700;
+  cursor: pointer; transition: all 0.15s;
+}
+.btn-cancel:hover { background: var(--surface2); }
+.btn-save {
+  flex: 2; padding: 10px; border: none;
+  border-radius: 10px; background: var(--tom-blue); color: white;
+  font-family: 'Noto Sans TC', sans-serif; font-size: 14px; font-weight: 700;
+  cursor: pointer; transition: all 0.15s;
+  box-shadow: 0 2px 8px rgba(45,111,168,0.4);
+}
+.btn-save:hover { background: var(--tom-blue-dark); }
+
+/* FAB */
+.fab {
+  position: fixed; bottom: 20px; right: 16px;
+  width: 44px; height: 44px;
+  background: var(--tom-blue); color: white;
+  border: none; border-radius: 50%; font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(45,111,168,0.45);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 100; transition: all 0.18s;
+}
+.fab:hover { background: var(--tom-blue-dark); transform: translateY(-2px); }
+
+.sync-status {
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.22);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 20px;
+  padding: 5px 14px;
+  color: rgba(255,255,255,0.96);
+  font-size: 12px;
+  font-weight: 700;
+}
+.sync-actions {
+  display:flex; gap:8px; align-items:center; flex-wrap:wrap;
+}
+.btn-sync {
+  background: #eef8f0; color: #1a7a50;
+  border: 1.5px solid #bfe4cf; border-radius: 10px;
+  padding: 5px 12px; font-size: 12px; font-weight: 700;
+  cursor: pointer; font-family: 'Noto Sans TC',sans-serif;
+}
+.btn-sync:hover { background:#1a7a50; color:#fff; border-color:#1a7a50; }
+.btn-danger-lite {
+  background:#fff1f1; color:#b53636; border:1.5px solid #f0c8c8; border-radius:10px;
+  padding:5px 12px; font-size:12px; font-weight:700; cursor:pointer; font-family:'Noto Sans TC',sans-serif;
+}
+.btn-danger-lite:hover { background:#b53636; color:#fff; border-color:#b53636; }
+.small-hint { font-size:11px; color: var(--text3); margin-top:6px; line-height:1.5; }
+
+
+/* compact sync status */
+.sync-status-compact{
+  position:absolute;
+  top:12px;
+  right:14px;
+  font-size:11px;
+  line-height:1;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(255,255,255,0.16);
+  border:1px solid rgba(255,255,255,0.22);
+  color:rgba(255,255,255,0.92);
+  backdrop-filter:blur(6px);
+  box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  z-index:3;
+  white-space:nowrap;
+}
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-pattern"></div>
+  <div class="sync-status-compact" id="syncStatusCompact">已與雲端同步</div>
+
+  <!-- Tom & Jerry SVG characters -->
+  <div class="header-characters">
+    <!-- Tom (blue/grey cat) -->
+    <svg class="tom-svg" width="90" height="110" viewBox="0 0 90 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- body -->
+      <ellipse cx="45" cy="85" rx="28" ry="22" fill="#7ab0d4"/>
+      <!-- tummy -->
+      <ellipse cx="45" cy="88" rx="16" ry="14" fill="#c8dff0"/>
+      <!-- tail -->
+      <path d="M73 95 Q90 80 82 65 Q78 58 85 50" stroke="#7ab0d4" stroke-width="7" stroke-linecap="round" fill="none"/>
+      <!-- legs -->
+      <ellipse cx="32" cy="104" rx="9" ry="6" fill="#5a90b8"/>
+      <ellipse cx="58" cy="104" rx="9" ry="6" fill="#5a90b8"/>
+      <!-- arms -->
+      <ellipse cx="18" cy="82" rx="7" ry="11" fill="#7ab0d4" transform="rotate(-15 18 82)"/>
+      <ellipse cx="72" cy="82" rx="7" ry="11" fill="#7ab0d4" transform="rotate(15 72 82)"/>
+      <!-- head -->
+      <ellipse cx="45" cy="52" rx="26" ry="24" fill="#7ab0d4"/>
+      <!-- ears -->
+      <ellipse cx="22" cy="32" rx="9" ry="13" fill="#7ab0d4" transform="rotate(-20 22 32)"/>
+      <ellipse cx="24" cy="32" rx="5" ry="8" fill="#e8a0b0" transform="rotate(-20 24 32)"/>
+      <ellipse cx="68" cy="32" rx="9" ry="13" fill="#7ab0d4" transform="rotate(20 68 32)"/>
+      <ellipse cx="66" cy="32" rx="5" ry="8" fill="#e8a0b0" transform="rotate(20 66 32)"/>
+      <!-- face -->
+      <ellipse cx="45" cy="56" rx="18" ry="16" fill="#c8dff0"/>
+      <!-- eyes -->
+      <ellipse cx="37" cy="48" rx="5" ry="6" fill="white"/>
+      <ellipse cx="53" cy="48" rx="5" ry="6" fill="white"/>
+      <circle cx="38" cy="49" r="3" fill="#1a3a6a"/>
+      <circle cx="54" cy="49" r="3" fill="#1a3a6a"/>
+      <circle cx="39" cy="48" r="1.2" fill="white"/>
+      <circle cx="55" cy="48" r="1.2" fill="white"/>
+      <!-- eyebrows (smirk) -->
+      <path d="M33 43 Q37 40 41 43" stroke="#5a90b8" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      <path d="M49 43 Q53 40 57 43" stroke="#5a90b8" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      <!-- nose -->
+      <ellipse cx="45" cy="55" rx="4" ry="2.5" fill="#d08090"/>
+      <!-- mouth (sly smile) -->
+      <path d="M38 61 Q42 65 45 63 Q49 61 52 63" stroke="#c06070" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      <!-- whiskers -->
+      <line x1="25" y1="57" x2="40" y2="55" stroke="#8ab8d8" stroke-width="1" opacity="0.8"/>
+      <line x1="25" y1="61" x2="40" y2="59" stroke="#8ab8d8" stroke-width="1" opacity="0.8"/>
+      <line x1="50" y1="55" x2="65" y2="57" stroke="#8ab8d8" stroke-width="1" opacity="0.8"/>
+      <line x1="50" y1="59" x2="65" y2="61" stroke="#8ab8d8" stroke-width="1" opacity="0.8"/>
+    </svg>
+
+    <!-- Jerry (brown mouse) -->
+    <svg class="jerry-svg" width="65" height="85" viewBox="0 0 65 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- tail -->
+      <path d="M38 78 Q55 72 50 58" stroke="#c8883a" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <!-- body -->
+      <ellipse cx="32" cy="66" rx="20" ry="17" fill="#d4913f"/>
+      <!-- tummy -->
+      <ellipse cx="32" cy="68" rx="12" ry="10" fill="#f0c880"/>
+      <!-- legs -->
+      <ellipse cx="22" cy="80" rx="7" ry="5" fill="#b87830"/>
+      <ellipse cx="42" cy="80" rx="7" ry="5" fill="#b87830"/>
+      <!-- arms -->
+      <ellipse cx="13" cy="64" rx="6" ry="9" fill="#d4913f" transform="rotate(-10 13 64)"/>
+      <ellipse cx="51" cy="64" rx="6" ry="9" fill="#d4913f" transform="rotate(10 51 64)"/>
+      <!-- head -->
+      <ellipse cx="32" cy="40" rx="20" ry="18" fill="#d4913f"/>
+      <!-- ears -->
+      <ellipse cx="14" cy="24" rx="9" ry="11" fill="#d4913f"/>
+      <ellipse cx="14" cy="24" rx="6" ry="7.5" fill="#e8a0a0"/>
+      <ellipse cx="50" cy="24" rx="9" ry="11" fill="#d4913f"/>
+      <ellipse cx="50" cy="24" rx="6" ry="7.5" fill="#e8a0a0"/>
+      <!-- face -->
+      <ellipse cx="32" cy="44" rx="13" ry="12" fill="#f0c880"/>
+      <!-- eyes -->
+      <ellipse cx="25" cy="36" rx="4" ry="5" fill="white"/>
+      <ellipse cx="39" cy="36" rx="4" ry="5" fill="white"/>
+      <circle cx="26" cy="37" r="2.5" fill="#3a2010"/>
+      <circle cx="40" cy="37" r="2.5" fill="#3a2010"/>
+      <circle cx="27" cy="36" r="1" fill="white"/>
+      <circle cx="41" cy="36" r="1" fill="white"/>
+      <!-- eyebrows (cheeky) -->
+      <path d="M22 31 Q25 28 28 31" stroke="#b07030" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+      <path d="M36 31 Q39 28 42 31" stroke="#b07030" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+      <!-- nose -->
+      <ellipse cx="32" cy="43" rx="3" ry="2" fill="#d06880"/>
+      <!-- happy mouth -->
+      <path d="M27 48 Q32 53 37 48" stroke="#c06070" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      <!-- whiskers -->
+      <line x1="16" y1="44" x2="28" y2="43" stroke="#b07030" stroke-width="0.8" opacity="0.7"/>
+      <line x1="16" y1="47" x2="28" y2="46" stroke="#b07030" stroke-width="0.8" opacity="0.7"/>
+      <line x1="36" y1="43" x2="48" y2="44" stroke="#b07030" stroke-width="0.8" opacity="0.7"/>
+      <line x1="36" y1="46" x2="48" y2="47" stroke="#b07030" stroke-width="0.8" opacity="0.7"/>
+    </svg>
+  </div>
+
+  <div class="header-text">
+    <h1>小姆&波魚的香港之旅 🇭🇰</h1>
+    <div class="header-date">📅 2026年5月9日 — 12日 &nbsp;·&nbsp; 4天3夜</div>
+    <div class="sync-status" id="syncStatus">☁️ 雲端同步未設定</div>
+  </div>
+  <div class="cheese-holes"></div>
+</div>
+
+<div class="container">
+
+  <!-- TODO -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title"><span class="title-icon">✅</span> 待辦清單</div>
+      <div class="sync-actions"><button class="btn-sm" onclick="openTodoModal()">＋ 新增</button><button class="btn-sync" onclick="syncNow()">☁️ 立即同步</button></div>
+    </div>
+    <div class="todo-list" id="todoList"></div>
+  </div>
+
+  <!-- EXPENSE -->
+  <div class="card">
+    <div class="expense-top">
+      <div>
+        <div class="total-label">總花費</div>
+        <div class="total-amount"><sup>HKD </sup><span id="totalNum">0</span></div>
+      </div>
+      <button class="btn-add-exp" onclick="openExpenseModal()">＋ 新增記帳</button>
+    </div>
+    <div class="expense-breakdown">
+      <div class="exp-person exp-shared">
+        <div class="exp-person-icon">🤝</div>
+        <div class="exp-person-name">共同花費</div>
+        <div class="exp-person-amt" id="sharedAmt">0</div>
+      </div>
+      <div class="exp-person exp-mumu">
+        <!-- Golden hamster SVG for 小姆 -->
+        <div class="exp-person-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="14" cy="17" rx="10" ry="9" fill="#e8a82a"/>
+            <ellipse cx="14" cy="18" rx="7" ry="6" fill="#f5d070"/>
+            <ellipse cx="14" cy="11" rx="8" ry="7" fill="#e8a82a"/>
+            <!-- chubby cheeks -->
+            <ellipse cx="6" cy="15" rx="5" ry="4" fill="#f0c050"/>
+            <ellipse cx="22" cy="15" rx="5" ry="4" fill="#f0c050"/>
+            <!-- ears -->
+            <ellipse cx="7" cy="6" rx="4" ry="5" fill="#e8a82a"/>
+            <ellipse cx="7" cy="6" rx="2.5" ry="3.5" fill="#f0c0a0"/>
+            <ellipse cx="21" cy="6" rx="4" ry="5" fill="#e8a82a"/>
+            <ellipse cx="21" cy="6" rx="2.5" ry="3.5" fill="#f0c0a0"/>
+            <!-- eyes -->
+            <circle cx="10.5" cy="10" r="2.2" fill="#1a1000"/>
+            <circle cx="17.5" cy="10" r="2.2" fill="#1a1000"/>
+            <circle cx="11.2" cy="9.3" r="0.8" fill="white"/>
+            <circle cx="18.2" cy="9.3" r="0.8" fill="white"/>
+            <!-- nose -->
+            <ellipse cx="14" cy="13" rx="1.5" ry="1" fill="#d06060"/>
+            <!-- smile -->
+            <path d="M11 15 Q14 17.5 17 15" stroke="#c05050" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+            <!-- tiny paws -->
+            <ellipse cx="7" cy="23" rx="3.5" ry="2.2" fill="#e8a82a"/>
+            <ellipse cx="21" cy="23" rx="3.5" ry="2.2" fill="#e8a82a"/>
+          </svg>
+        </div>
+        <div class="exp-person-name">小姆花費</div>
+        <div class="exp-person-amt" id="mumuAmt">0</div>
+      </div>
+      <div class="exp-person exp-boyu">
+        <div class="exp-person-icon">🐟</div>
+        <div class="exp-person-name">波魚花費</div>
+        <div class="exp-person-amt" id="boyuAmt">0</div>
+      </div>
+    </div>
+    <div class="expense-log" id="expenseLog"></div>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs" id="tabs"></div>
+
+  <!-- PANELS -->
+  <div id="panels"></div>
+</div>
+
+<button class="fab" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- ITEM MODAL -->
+<div class="overlay" id="itemModal">
+  <div class="modal">
+    <div class="modal-head">
+      <h3 id="itemModalTitle">新增行程</h3>
+      <button class="modal-x" onclick="closeItemModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="field"><label>類型</label>
+        <select id="f-type"><option>餐廳</option><option>景點</option><option>交通</option><option>飯店</option><option>購物</option></select>
+      </div>
+      <div class="field"><label>時段</label>
+        <select id="f-time"><option>早上</option><option>下午</option><option>晚上</option></select>
+      </div>
+      <div class="field"><label>名稱</label>
+        <input id="f-name" type="text" placeholder="例：澳洲牛奶公司">
+      </div>
+      <div class="field"><label>地圖連結（選填）</label>
+        <input id="f-url" type="text" placeholder="貼上 Google Maps 連結">
+      </div>
+      <div class="field"><label>地點（選填）</label>
+        <input id="f-location" type="text" placeholder="例：尖沙咀">
+      </div>
+      <div class="field"><label>備註（選填）</label>
+        <textarea id="f-note" placeholder="例：7:30開門，要排隊"></textarea>
+      </div>
+      <div class="field"><label>預約狀態</label>
+        <select id="f-booked"><option value="0">未預約</option><option value="1">已預約</option></select>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn-cancel" onclick="closeItemModal()">取消</button>
+      <button class="btn-save" onclick="saveItem()">儲存</button>
+    </div>
+  </div>
+</div>
+
+<!-- EXPENSE MODAL -->
+<div class="overlay" id="expenseModal">
+  <div class="modal">
+    <div class="modal-head">
+      <h3>新增記帳</h3>
+      <button class="modal-x" onclick="closeExpenseModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="field"><label>類別</label>
+        <select id="e-who">
+          <option value="shared">🤝 共同花費</option>
+          <option value="mumu">🐹 小姆花費</option>
+          <option value="boyu">🐟 波魚花費</option>
+        </select>
+      </div>
+      <div class="field"><label>項目名稱</label>
+        <input id="e-desc" type="text" placeholder="例：叮叮車">
+      </div>
+      <div class="field"><label>金額（HKD）</label>
+        <input id="e-amount" type="number" min="0" step="0.5" placeholder="0">
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn-cancel" onclick="closeExpenseModal()">取消</button>
+      <button class="btn-save" onclick="saveExpense()">儲存</button>
+    </div>
+  </div>
+</div>
+
+<!-- TODO MODAL -->
+<div class="overlay" id="todoModal">
+  <div class="modal">
+    <div class="modal-head">
+      <h3>新增待辦</h3>
+      <button class="modal-x" onclick="closeTodoModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="field"><label>項目</label>
+        <input id="t-label" type="text" placeholder="例：訂餐廳">
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn-cancel" onclick="closeTodoModal()">取消</button>
+      <button class="btn-save" onclick="saveTodo()">儲存</button>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="padding-top:0; padding-bottom:20px;">
+</div>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, doc, getDoc, setDoc, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBylIKB99wxXQl0ityE0m5KNghHtI7LB2U",
+  authDomain: "travel1006.firebaseapp.com",
+  projectId: "travel1006",
+  storageBucket: "travel1006.firebasestorage.app",
+  messagingSenderId: "112366256940",
+  appId: "1:112366256940:web:2fb4883505247f6ee46289",
+  measurementId: "G-XCBLBP0XHB"
+};
+
+const CLOUD_ROOM_ID = "mumu-boyu-hk-trip-2026";
+const hasFirebaseConfig = firebaseConfig.apiKey !== "REPLACE_ME";
+let db = null;
+let tripDocRef = null;
+let unsubscribeSnapshot = null;
+let applyingRemoteData = false;
+let cloudReady = false;
+
+function updateSyncStatus(text) {
+  const el = document.getElementById('syncStatus');
+  if (el) el.textContent = text;
+}
+
+if (hasFirebaseConfig) {
+  const app = initializeApp(firebaseConfig);
+  db = getFirestore(app);
+  tripDocRef = doc(db, 'sharedTrips', CLOUD_ROOM_ID);
+  cloudReady = true;
+  updateSyncStatus('☁️ 雲端同步準備中');
+} else {
+  updateSyncStatus('☁️ 連線中');
+}
+
+const roomIdEl = document.getElementById('roomIdText');
+if (roomIdEl) roomIdEl.textContent = CLOUD_ROOM_ID;
+
+// ── SVG ICONS ──
+const svgIcons = {
+  '餐廳': `<svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+    <path d="M7 2v7c0 2.2 1.8 4 4 4s4-1.8 4-4V2" stroke="#e8840a" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M11 13v7" stroke="#e8840a" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M11 2v5" stroke="#e8840a" stroke-width="1.8" stroke-linecap="round"/>
+    <circle cx="11" cy="9" r="2.5" fill="#f5c060" stroke="#e8840a" stroke-width="1.2"/>
+    <path d="M4 20h14" stroke="#e8840a" stroke-width="1.8" stroke-linecap="round"/>
+  </svg>`,
+
+  '景點': `<svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+    <path d="M11 2C7.5 2 4.5 5 4.5 8.5c0 5.2 6.5 11.5 6.5 11.5s6.5-6.3 6.5-11.5C17.5 5 14.5 2 11 2z" fill="#48bb8a" stroke="#22a06b" stroke-width="1.3"/>
+    <circle cx="11" cy="8.5" r="2.8" fill="white" stroke="#22a06b" stroke-width="1.2"/>
+    <path d="M8.5 14.5 L11 12 L13.5 14.5" stroke="white" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.7"/>
+  </svg>`,
+
+  '交通': `<svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+    <rect x="3" y="6" width="16" height="11" rx="3" fill="#60a8e0" stroke="#3080c0" stroke-width="1.3"/>
+    <rect x="5" y="8" width="5" height="4" rx="1.2" fill="white" opacity="0.9"/>
+    <rect x="12" y="8" width="5" height="4" rx="1.2" fill="white" opacity="0.9"/>
+    <path d="M3 13h16" stroke="#3080c0" stroke-width="1"/>
+    <circle cx="7" cy="18.5" r="2" fill="#3080c0" stroke="white" stroke-width="1"/>
+    <circle cx="15" cy="18.5" r="2" fill="#3080c0" stroke="white" stroke-width="1"/>
+    <path d="M9 6 L8 3h6l-1 3" stroke="#3080c0" stroke-width="1.2" fill="none"/>
+  </svg>`,
+
+  '飯店': `<svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+    <rect x="3" y="7" width="16" height="13" rx="2" fill="#e8a0c8" stroke="#c070a0" stroke-width="1.3"/>
+    <path d="M7 7V4a4 4 0 0 1 8 0v3" stroke="#c070a0" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <rect x="9" y="11" width="4" height="5" rx="1" fill="white"/>
+    <circle cx="11" cy="9.5" r="1.2" fill="white"/>
+    <path d="M7 20v-2" stroke="#c070a0" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M15 20v-2" stroke="#c070a0" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>`,
+
+  '購物': `<svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+    <path d="M4 6h14l-2 10H6L4 6z" fill="#f5d040" stroke="#d4a800" stroke-width="1.3"/>
+    <path d="M8 6 Q8 3 11 3 Q14 3 14 6" stroke="#d4a800" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <circle cx="9" cy="17" r="1.5" fill="#d4a800"/>
+    <circle cx="14" cy="17" r="1.5" fill="#d4a800"/>
+    <path d="M8 10 Q11 12 14 10" stroke="#d4a800" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+  </svg>`,
+};
+
+const typeBg = {
+  '餐廳':'ti-bg-food','景點':'ti-bg-sight',
+  '交通':'ti-bg-transport','飯店':'ti-bg-hotel','購物':'ti-bg-shop'
+};
+
+// ── DATA ──
+let todos = [
+  {label:'保險', done:true},
+  {label:'機票劃位', done:false},
+  {label:'轉接頭', done:false},
+  {label:'eSIM', done:true},
+];
+
+let expenses = [];
+
+let itinerary = [
+  {
+    label:'Day 1', date:'05/09', city:'旺角',
+    flight:{num:'UO193', route:'RMQ T1 → HKG T1', time:'10:25 – 12:10'},
+    groups:[
+      {time:'早上', items:[
+        {type:'交通', name:'租 IRENT 去機場', url:'', location:'', note:'8點出門', booked:false},
+        {type:'交通', name:'UO193 出發', url:'', location:'', note:'RMQ T1 → HKG T1　10:25–12:10', booked:false},
+      ]},
+      {time:'下午', items:[
+        {type:'飯店', name:'城景國際－嘉多納由麻地店', url:'https://maps.app.goo.gl/ymAGjRF5b9mqjkXS8', location:'油麻地', note:'放行李 → 開心果燒餅 → 椰汁大王', booked:false},
+        {type:'景點', name:'媽不在家塗鴉牆', url:'https://maps.app.goo.gl/k8QSWhicUK8Xv3xC9', location:'', note:'富豪雪糕車據點，去拍照', booked:false},
+        {type:'餐廳', name:'通達食店－元旦魚蛋－金華冰廳', url:'https://share.google/FDK0OPRjz0ht2CJ44', location:'旺角', note:'魚蛋 + 冰火菠蘿油', booked:false},
+        {type:'景點', name:'郎豪坊', url:'', location:'', note:'', booked:false},
+      ]},
+      {time:'晚上', items:[
+        {type:'景點', name:'波鞋街', url:'', location:'', note:'', booked:false},
+        {type:'餐廳', name:'民華餐廳', url:'https://maps.app.goo.gl/6C3qUQ9dSrNswB2D6', location:'', note:'', booked:false},
+        {type:'餐廳', name:'佳佳甜品', url:'https://maps.app.goo.gl/phW7JFJMi3zrvteB7', location:'佐敦', note:'', booked:false},
+        {type:'購物', name:'DON DON DONKI', url:'https://www.google.com/maps/place/DON+DON+DONKI/@22.3003056,114.1674841,17z', location:'尖沙咀', note:'', booked:false},
+        {type:'購物', name:'惠康超市 / 大生超市', url:'', location:'', note:'要買很多巧克力', booked:false},
+        {type:'飯店', name:'城景國際 入住', url:'', location:'', note:'', booked:false},
+      ]},
+    ]
+  },
+  {
+    label:'Day 2', date:'05/10', city:'香港',
+    groups:[
+      {time:'早上', items:[
+        {type:'餐廳', name:'澳洲牛奶公司', url:'https://maps.app.goo.gl/Aio8dERP5uMJcPDV6', location:'', note:'7:30 開門', booked:false},
+        {type:'景點', name:'中環街市', url:'https://maps.app.goo.gl/oxX4X4XD2Qgu9qRy9', location:'', note:'', booked:false},
+        {type:'景點', name:'中環半山扶手電梯', url:'', location:'', note:'', booked:false},
+        {type:'景點', name:'石板街', url:'', location:'', note:'10:30 約拍照', booked:false},
+      ]},
+      {time:'下午', items:[
+        {type:'景點', name:'嘉咸街、卑利街', url:'', location:'', note:'', booked:false},
+        {type:'餐廳', name:'蘭芳園、藍瓶咖啡', url:'', location:'', note:'', booked:false},
+        {type:'餐廳', name:'林里手打檸檬茶、檸檬王', url:'', location:'', note:'陳意齋杏仁餅店 可去可不去', booked:false},
+        {type:'交通', name:'租庇利街搭叮叮車', url:'', location:'', note:'', booked:false},
+        {type:'餐廳', name:'甘牌燒鵝', url:'', location:'', note:'', booked:false},
+      ]},
+      {time:'晚上', items:[
+        {type:'景點', name:'灣仔臨時海濱公園', url:'', location:'', note:'', booked:false},
+        {type:'交通', name:'灣仔碼頭 → 維多利亞港 → 尖沙咀', url:'', location:'', note:'搭船', booked:false},
+        {type:'餐廳', name:'廟街夜市煲仔飯', url:'', location:'', note:'', booked:false},
+        {type:'飯店', name:'城景國際 入住', url:'', location:'', note:'', booked:false},
+      ]},
+    ]
+  },
+  {
+    label:'Day 3', date:'05/11', city:'香港',
+    groups:[
+      {time:'早上', items:[
+        {type:'交通', name:'前往迪士尼樂園', url:'', location:'', note:'', booked:false},
+      ]},
+      {time:'下午', items:[
+        {type:'景點', name:'香港迪士尼樂園', url:'', location:'', note:'10:30 開園', booked:true},
+      ]},
+      {time:'晚上', items:[
+        {type:'景點', name:'迪士尼煙火', url:'', location:'', note:'大概 20:00', booked:true},
+        {type:'餐廳', name:'旺記冰室 (旺角)', url:'https://www.google.com/maps/place/%E6%97%BA%E8%A8%98%E5%86%B0%E5%AE%A4+(%E6%97%BA%E8%A7%92)/@22.3159885,114.1688101,17z', location:'旺角', note:'日本滑蛋叉燒蝦仁雙併飯 必點', booked:false},
+        {type:'飯店', name:'城景國際 入住', url:'', location:'', note:'', booked:false},
+      ]},
+    ]
+  },
+  {
+    label:'Day 4', date:'05/12', city:'香港',
+    flight:{num:'UO182', route:'HKG T1 → RMQ T1', time:'18:15 – 19:55'},
+    groups:[
+      {time:'早上', items:[
+        {type:'餐廳', name:'華嫂冰室', url:'https://www.google.com/maps/place/%E8%8F%AF%E5%AB%82%E5%86%B0%E5%AE%A4+(%E5%B0%96%E6%B2%99%E5%92%80)/@22.299445,114.1633918,16z', location:'尖沙咀', note:'', booked:false},
+        {type:'餐廳', name:'Winstons Coffee', url:'https://www.google.com/maps/place/Winstons+Coffee/@22.2894545,114.1396149,15z', location:'堅尼地城', note:'路標打卡點（順便喝咖啡）', booked:false},
+        {type:'景點', name:'堅尼地城站', url:'', location:'', note:'C出口籃球場 — 機位1（Winstons Coffee走路1分鐘）', booked:false},
+      ]},
+      {time:'晚上', items:[
+        {type:'交通', name:'前往機場', url:'', location:'', note:'提早出發', booked:true},
+        {type:'交通', name:'UO182 返程', url:'', location:'', note:'HKG T1 → RMQ T1　18:15–19:55', booked:false},
+      ]},
+    ]
+  }
+];
+
+const defaultItinerary = JSON.parse(JSON.stringify(itinerary));
+
+let activeDay = 0;
+let editTarget = null;
+let pendingDayIdx = null;
+let dragState = null;
+let currentDropTarget = null;
+
+function clearDropIndicator() {
+  document.querySelectorAll('.drop-indicator').forEach(el => el.remove());
+  document.querySelectorAll('.item-list.drag-over').forEach(el => el.classList.remove('drag-over'));
+  currentDropTarget = null;
+}
+
+function getDropIndex(listEl, clientY) {
+  const rows = [...listEl.querySelectorAll('.item-row:not(.dragging)')];
+  let toIndex = rows.length;
+  for (let i = 0; i < rows.length; i++) {
+    const rect = rows[i].getBoundingClientRect();
+    const mid = rect.top + rect.height / 2;
+    if (clientY < mid) {
+      toIndex = i;
+      break;
+    }
+  }
+  return toIndex;
+}
+
+function showDropIndicator(listEl, clientY) {
+  clearDropIndicator();
+  listEl.classList.add('drag-over');
+
+  const rows = [...listEl.querySelectorAll('.item-row:not(.dragging)')];
+  const toIndex = getDropIndex(listEl, clientY);
+  const indicator = document.createElement('div');
+  indicator.className = 'drop-indicator';
+  indicator.dataset.index = String(toIndex);
+
+  if (!rows.length || toIndex >= rows.length) {
+    listEl.appendChild(indicator);
+  } else {
+    listEl.insertBefore(indicator, rows[toIndex]);
+  }
+
+  currentDropTarget = { el: listEl, index: toIndex };
+}
+
+// ── RENDER ──
+function render() { renderTodos(); renderExpenses(); renderTabs(); renderPanels(); }
+
+function renderTodos() {
+  const el = document.getElementById('todoList');
+  el.innerHTML = '';
+  todos.forEach((t, i) => {
+    const c = document.createElement('div');
+    c.className = 'todo-chip' + (t.done ? ' done' : '');
+    c.innerHTML = `<div class="todo-cb"></div>${t.label}`;
+    c.onclick = () => { todos[i].done = !todos[i].done; afterDataChange(); };
+    el.appendChild(c);
+  });
+}
+
+function renderExpenses() {
+  const fmt = n => n === 0 ? '0' : (n % 1 === 0 ? n.toString() : n.toFixed(1));
+  const shared = expenses.filter(e=>e.who==='shared').reduce((a,b)=>a+b.amount,0);
+  const mumu   = expenses.filter(e=>e.who==='mumu').reduce((a,b)=>a+b.amount,0);
+  const boyu   = expenses.filter(e=>e.who==='boyu').reduce((a,b)=>a+b.amount,0);
+  const total  = shared + mumu + boyu;
+  document.getElementById('totalNum').textContent = fmt(total);
+  document.getElementById('sharedAmt').textContent = 'HKD ' + fmt(shared);
+  document.getElementById('mumuAmt').textContent = 'HKD ' + fmt(mumu);
+  document.getElementById('boyuAmt').textContent = 'HKD ' + fmt(boyu);
+  const log = document.getElementById('expenseLog');
+  log.innerHTML = '';
+  if (!expenses.length) return;
+  expenses.slice().reverse().forEach((e, ri) => {
+    const i = expenses.length - 1 - ri;
+    const labels = {shared:'共同', mumu:'小姆', boyu:'波魚'};
+    const bcs = {shared:'eb-shared', mumu:'eb-mumu', boyu:'eb-boyu'};
+    const row = document.createElement('div');
+    row.className = 'exp-row';
+    row.innerHTML = `
+      <div class="exp-row-left">
+        <span class="exp-badge ${bcs[e.who]}">${labels[e.who]}</span>
+        <span class="exp-desc">${e.desc}</span>
+      </div>
+      <div class="exp-right">
+        <span class="exp-amt">HKD ${fmt(e.amount)}</span>
+        <button class="btn-del-exp" onclick="deleteExpense(${i})">×</button>
+      </div>`;
+    log.appendChild(row);
+  });
+}
+
+function renderTabs() {
+  const el = document.getElementById('tabs');
+  el.innerHTML = '';
+  itinerary.forEach((d, i) => {
+    const tab = document.createElement('div');
+    tab.className = 'tab' + (i === activeDay ? ' active' : '');
+    tab.innerHTML = `<span class="dn">${d.label}</span><span class="dd">${d.date}</span>`;
+    tab.onclick = () => { activeDay = i; renderTabs(); renderPanels(); };
+    el.appendChild(tab);
+  });
+}
+
+function renderPanels() {
+  const el = document.getElementById('panels');
+  el.innerHTML = '';
+  itinerary.forEach((d, di) => {
+    const panel = document.createElement('div');
+    panel.className = 'day-panel' + (di === activeDay ? ' active' : '');
+
+    if (d.flight) {
+      const fc = document.createElement('div');
+      fc.className = 'flight-card';
+      fc.innerHTML = `<div class="flight-icon">✈️</div><div><div class="flight-num">${d.flight.num}</div><div class="flight-route">${d.flight.route}</div><div class="flight-time">${d.flight.time}</div></div>`;
+      panel.appendChild(fc);
+    }
+
+    const dc = document.createElement('div');
+    dc.className = 'day-card';
+
+    const banner = document.createElement('div');
+    banner.className = 'day-banner';
+    banner.innerHTML = `
+      <div class="day-banner-l">
+        <div class="day-label">${d.label}</div>
+        <div class="day-info">${d.date} · ${d.city}</div>
+      </div>
+      <button class="btn-add-item" onclick="openAddModal(${di})">＋ 新增</button>`;
+    dc.appendChild(banner);
+
+    d.groups.forEach((g, gi) => {
+      const tc = g.time === '早上' ? 'tp-morn' : g.time.includes('下午') ? 'tp-noon' : 'tp-night';
+      const tRow = document.createElement('div');
+      tRow.className = 'time-row';
+      tRow.innerHTML = `<div class="time-pill ${tc}">${g.time}</div><div class="time-div"></div>`;
+      dc.appendChild(tRow);
+
+      const list = document.createElement('div');
+      list.className = 'item-list';
+      list.dataset.di = di;
+      list.dataset.gi = gi;
+      list.addEventListener('dragover', handleListDragOver);
+      list.addEventListener('dragleave', handleListDragLeave);
+      list.addEventListener('drop', handleListDrop);
+
+      if (!g.items.length) {
+        const empty = document.createElement('div');
+        empty.style.cssText = 'padding:10px 16px;color:var(--text3);font-size:12px;font-style:italic;';
+        empty.textContent = '尚無行程';
+        list.appendChild(empty);
+      } else {
+        g.items.forEach((item, ii) => {
+          const row = document.createElement('div');
+          row.className = 'item-row';
+          row.draggable = true;
+          row.dataset.di = di;
+          row.dataset.gi = gi;
+          row.dataset.ii = ii;
+          row.addEventListener('dragstart', handleItemDragStart);
+          row.addEventListener('dragend', handleItemDragEnd);
+          const nameHtml = item.url
+            ? `<a href="${item.url}" target="_blank" rel="noopener">${item.name}</a>`
+            : item.name;
+          const locTag = item.location ? `<span class="tag-loc">📍 ${item.location}</span>` : '';
+          const bookedTag = item.booked ? `<span class="tag-booked">✓ 已預約</span>` : '';
+          row.innerHTML = `
+                        <div class="type-icon-wrap ${typeBg[item.type]||''}" style="margin-top:18px;">${svgIcons[item.type]||''}</div>
+            <div class="item-body" style="padding-top:18px;">
+              <div class="item-name">${nameHtml}</div>
+              <div class="item-tags">${locTag}${bookedTag}</div>
+              ${item.note ? `<div class="item-note">${item.note}</div>` : ''}
+            </div>
+            <div class="item-actions">
+              <button class="btn-icon btn-edit-i" onclick="event.stopPropagation();openEditModal(${di},${gi},${ii})">✏️</button>
+              <button class="btn-icon btn-del-i" onclick="event.stopPropagation();deleteItem(${di},${gi},${ii})">🗑️</button>
+            </div>`;
+          list.appendChild(row);
+        });
+      }
+
+      dc.appendChild(list);
+    });
+
+    panel.appendChild(dc);
+    el.appendChild(panel);
+  });
+}
+
+function handleItemDragStart(e) {
+  dragState = {
+    fromDi: Number(this.dataset.di),
+    fromGi: Number(this.dataset.gi),
+    fromIi: Number(this.dataset.ii),
+  };
+  this.classList.add('dragging');
+  if (e.dataTransfer) {
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/plain', JSON.stringify(dragState));
+  }
+}
+function handleItemDragEnd() {
+  this.classList.remove('dragging');
+  clearDropIndicator();
+}
+function handleListDragOver(e) {
+  if (!dragState) return;
+  e.preventDefault();
+  showDropIndicator(this, e.clientY);
+}
+function handleListDragLeave(e) {
+  const rect = this.getBoundingClientRect();
+  const x = e.clientX;
+  const y = e.clientY;
+  const isOutside = x < rect.left || x > rect.right || y < rect.top || y > rect.bottom;
+  if (isOutside && currentDropTarget && currentDropTarget.el === this) {
+    clearDropIndicator();
+  }
+}
+function handleListDrop(e) {
+  if (!dragState) return;
+  e.preventDefault();
+
+  const listEl = this;
+  const toDi = Number(listEl.dataset.di);
+  const toGi = Number(listEl.dataset.gi);
+  const toIndex = currentDropTarget && currentDropTarget.el === listEl
+    ? currentDropTarget.index
+    : getDropIndex(listEl, e.clientY);
+
+  clearDropIndicator();
+  moveItem(dragState.fromDi, dragState.fromGi, dragState.fromIi, toDi, toGi, toIndex);
+  dragState = null;
+}
+function moveItem(fromDi, fromGi, fromIi, toDi, toGi, toIndex) {
+  const sourceItems = itinerary[fromDi].groups[fromGi].items;
+  const [moved] = sourceItems.splice(fromIi, 1);
+  const targetItems = itinerary[toDi].groups[toGi].items;
+
+  if (toIndex < 0) toIndex = 0;
+  if (toIndex > targetItems.length) toIndex = targetItems.length;
+
+  targetItems.splice(toIndex, 0, moved);
+  afterDataChange();
+}
+
+// ── ITEM MODAL ──
+function openAddModal(di) {
+  pendingDayIdx = di; editTarget = null;
+  document.getElementById('itemModalTitle').textContent = '新增行程';
+  document.getElementById('f-type').selectedIndex = 0;
+  document.getElementById('f-time').selectedIndex = 0;
+  ['f-name','f-url','f-location','f-note'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('f-booked').value = '0';
+  document.getElementById('itemModal').classList.add('open');
+}
+function openEditModal(di, gi, ii) {
+  editTarget = {di, gi, ii}; pendingDayIdx = di;
+  const item = itinerary[di].groups[gi].items[ii];
+  document.getElementById('itemModalTitle').textContent = '編輯行程';
+  document.getElementById('f-type').value = item.type;
+  document.getElementById('f-time').value = itinerary[di].groups[gi].time;
+  document.getElementById('f-name').value = item.name;
+  document.getElementById('f-url').value = item.url || '';
+  document.getElementById('f-location').value = item.location || '';
+  document.getElementById('f-note').value = item.note || '';
+  document.getElementById('f-booked').value = item.booked ? '1' : '0';
+  document.getElementById('itemModal').classList.add('open');
+}
+function closeItemModal() { document.getElementById('itemModal').classList.remove('open'); }
+function saveItem() {
+  const name = document.getElementById('f-name').value.trim();
+  if (!name) { alert('請輸入名稱！'); return; }
+  const newItem = {
+    type: document.getElementById('f-type').value,
+    name, url: document.getElementById('f-url').value.trim(),
+    location: document.getElementById('f-location').value.trim(),
+    note: document.getElementById('f-note').value.trim(),
+    booked: document.getElementById('f-booked').value === '1',
+  };
+  const time = document.getElementById('f-time').value;
+  if (editTarget) {
+    const {di, gi, ii} = editTarget;
+    if (itinerary[di].groups[gi].time !== time) {
+      itinerary[di].groups[gi].items.splice(ii, 1);
+      let tg = itinerary[di].groups.find(g=>g.time===time);
+      if (!tg) { itinerary[di].groups.push({time,items:[]}); tg=itinerary[di].groups.at(-1); }
+      tg.items.push(newItem);
+    } else { itinerary[di].groups[gi].items[ii] = newItem; }
+  } else {
+    let tg = itinerary[pendingDayIdx].groups.find(g=>g.time===time);
+    if (!tg) { itinerary[pendingDayIdx].groups.push({time,items:[]}); tg=itinerary[pendingDayIdx].groups.at(-1); }
+    tg.items.push(newItem);
+  }
+  closeItemModal(); afterDataChange();
+}
+function deleteItem(di, gi, ii) {
+  if (!confirm('確定刪除？')) return;
+  itinerary[di].groups[gi].items.splice(ii, 1); afterDataChange();
+}
+
+// ── EXPENSE MODAL ──
+function openExpenseModal() {
+  document.getElementById('e-who').selectedIndex = 0;
+  document.getElementById('e-desc').value = '';
+  document.getElementById('e-amount').value = '';
+  document.getElementById('expenseModal').classList.add('open');
+}
+function closeExpenseModal() { document.getElementById('expenseModal').classList.remove('open'); }
+function saveExpense() {
+  const desc = document.getElementById('e-desc').value.trim();
+  const amount = parseFloat(document.getElementById('e-amount').value);
+  if (!desc) { alert('請輸入項目名稱！'); return; }
+  if (isNaN(amount) || amount <= 0) { alert('請輸入有效金額！'); return; }
+  expenses.push({who: document.getElementById('e-who').value, desc, amount});
+  closeExpenseModal(); afterDataChange();
+}
+function deleteExpense(i) { expenses.splice(i,1); afterDataChange(); }
+
+// ── TODO MODAL ──
+function openTodoModal() {
+  document.getElementById('t-label').value = '';
+  document.getElementById('todoModal').classList.add('open');
+}
+function closeTodoModal() { document.getElementById('todoModal').classList.remove('open'); }
+function saveTodo() {
+  const label = document.getElementById('t-label').value.trim();
+  if (!label) { alert('請輸入項目！'); return; }
+  todos.push({label, done:false});
+  closeTodoModal(); afterDataChange();
+}
+
+['itemModal','expenseModal','todoModal'].forEach(id => {
+  document.getElementById(id).addEventListener('click', function(e){ if(e.target===this) this.classList.remove('open'); });
+});
+
+function getPayload() {
+  return { todos, expenses, itinerary, updatedAt: Date.now() };
+}
+
+async function saveCloudData(showStatus = true) {
+  if (!cloudReady || applyingRemoteData) return;
+  try {
+    if (showStatus) updateSyncStatus('☁️ 同步中...');
+    await setDoc(tripDocRef, { ...getPayload(), serverUpdatedAt: serverTimestamp() }, { merge: true });
+    if (showStatus) updateSyncStatus('☁️ 已同步到雲端');
+  } catch (err) {
+    console.error(err);
+    updateSyncStatus('⚠️ 雲端同步失敗');
+  }
+}
+
+async function bootstrapCloud() {
+  if (!cloudReady) return;
+  try {
+    const snap = await getDoc(tripDocRef);
+    if (!snap.exists()) {
+      await saveCloudData(false);
+      updateSyncStatus('☁️ 已建立共享資料');
+    } else {
+      const data = snap.data();
+      applyingRemoteData = true;
+      todos = Array.isArray(data.todos) ? data.todos : todos;
+      expenses = Array.isArray(data.expenses) ? data.expenses : expenses;
+      itinerary = Array.isArray(data.itinerary) ? data.itinerary : itinerary;
+      applyingRemoteData = false;
+      render();
+      updateSyncStatus('☁️ 已載入雲端資料');
+    }
+
+    unsubscribeSnapshot = onSnapshot(tripDocRef, (docSnap) => {
+      if (!docSnap.exists()) return;
+      const data = docSnap.data();
+      applyingRemoteData = true;
+      todos = Array.isArray(data.todos) ? data.todos : todos;
+      expenses = Array.isArray(data.expenses) ? data.expenses : expenses;
+      itinerary = Array.isArray(data.itinerary) ? data.itinerary : itinerary;
+      applyingRemoteData = false;
+      render();
+      updateSyncStatus('☁️ 已與雲端同步');
+    }, (err) => {
+      console.error(err);
+      updateSyncStatus('⚠️ 監聽同步失敗');
+    });
+  } catch (err) {
+    console.error(err);
+    updateSyncStatus('⚠️ 無法讀取雲端資料');
+  }
+}
+
+window.syncNow = async function syncNow() {
+  if (!cloudReady) {
+    alert('請先填入 Firebase 設定後再部署。');
+    return;
+  }
+  await saveCloudData(true);
+};
+
+window.resetCloudData = async function resetCloudData() {
+  if (!cloudReady) {
+    alert('目前尚未啟用 Firebase。');
+    return;
+  }
+  if (!confirm('確定把雲端資料重設為原始預設行程？')) return;
+  todos = [
+    {label:'保險', done:true},
+    {label:'機票劃位', done:false},
+    {label:'轉接頭', done:false},
+    {label:'eSIM', done:true},
+  ];
+  expenses = [];
+  itinerary = JSON.parse(JSON.stringify(defaultItinerary));
+  activeDay = 0;
+  afterDataChange();
+};
+
+function afterDataChange() {
+  render();
+  saveCloudData(false);
+}
+
+Object.assign(window, {
+  openAddModal, openEditModal, closeItemModal, saveItem, deleteItem,
+  openExpenseModal, closeExpenseModal, saveExpense, deleteExpense,
+  openTodoModal, closeTodoModal, saveTodo
+});
+
+render();
+bootstrapCloud();
+</script>
+</body>
+</html>
